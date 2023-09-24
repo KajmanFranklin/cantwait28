@@ -24,6 +24,20 @@ class _AddPageState extends State<AddPage> {
         listener: (context, state) {
           if (state.saved == true) {
             Navigator.of(context).pop();
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Pozycja została zapisana'),
+                backgroundColor: Colors.green,
+              ),
+            );
+          }
+          if (state.errorMessage.isNotEmpty) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(state.errorMessage),
+                backgroundColor: Colors.red,
+              ),
+            );
           }
         },
         child: BlocBuilder<AddCubit, AddState>(
