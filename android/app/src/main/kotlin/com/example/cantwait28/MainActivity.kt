@@ -1,4 +1,4 @@
-package com.example.cantwait28
+package com.bartoszrumian.cantwait28
 
 import io.flutter.embedding.android.FlutterActivity
 
